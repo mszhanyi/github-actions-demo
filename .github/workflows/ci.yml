@@ -38,7 +38,8 @@ jobs:
         git merge upstream/master
         git status
         remote_repo="https://${{ secrets.aiinfra-linux2 }}@github.com/mszhanyi/pytorch.git"
-        git push remote_repo
+        ehco $remote_repo
+        git push $remote_repo
     - name: Logging
       run: |
         pwd
