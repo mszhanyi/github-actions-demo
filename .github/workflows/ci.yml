@@ -20,6 +20,7 @@ jobs:
         git config --local user.name "mszhanyi"     
         git add report.txt
         git commit -m "commit change"
+        echo ${{ github.ref }}
     - name: Push report
       uses: ad-m/github-push-action@master
       with:
@@ -43,7 +44,10 @@ jobs:
         git fetch upstream
         git merge upstream/master
         git status
-        git push
+    - name: Push report
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
     - name: Install and Build
       run: |
         npm install
