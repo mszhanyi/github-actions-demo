@@ -19,11 +19,11 @@ jobs:
         ACCESS_TOKEN: ${{ secrets.demos }}
     - name: sync with upstream
       run: |
-      git remote add upstream https://github.com/pytorch/pytorch
-      git remote -v
-      git fetch upstream
-      git merge upstream/master
-      git push
+        git remote add upstream https://github.com/pytorch/pytorch
+        git remote -v
+        git fetch upstream
+        git merge upstream/master
+        git push
     - name: Install and Build
       run: |
         npm install
