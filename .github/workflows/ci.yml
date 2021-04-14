@@ -22,11 +22,14 @@ jobs:
         github_token: $${{ secrets.demos }}
       run: |
         cd pytorch
+        git config --local user.email "zhanyi@microsoft.com"
+        git config --local user.name "mszhanyi"
         git status
         git remote add upstream https://github.com/pytorch/pytorch
         git remote -v
         git fetch upstream
         git merge upstream/master
+        git status
         git push
     - name: Install and Build
       run: |
