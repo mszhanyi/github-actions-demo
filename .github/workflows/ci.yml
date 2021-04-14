@@ -6,8 +6,6 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    env:
-      TOKEN: ${{ secrets.PYTORCH_KEY }}
     steps:
     - name: Checkout
       uses: actions/checkout@v2 # If you're using actions/checkout@v2 you must set persist-credentials to false in most cases for the deployment to work correctly.
@@ -31,8 +29,8 @@ jobs:
     - name: sync with upstream
       run: |
         cd pytorch
-        git config --local user.email "action@users.noreply.github.com"
-        git config --local user.name "github-actions[bot]"
+        git config --local user.email "mszhanyi@users.noreply.github.com"
+        git config --local user.name "mszhanyi"
         git status
         git remote add upstream https://github.com/pytorch/pytorch
         git remote -v
