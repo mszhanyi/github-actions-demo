@@ -51,7 +51,8 @@ jobs:
       uses: ad-m/github-push-action@master
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        directory: pytorch
+        repository: https://github.com/mszhanyi/pytorch
+        directory: ./pytorch
     - name: Install and Build
       run: |
         npm install
