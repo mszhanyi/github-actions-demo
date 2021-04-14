@@ -37,18 +37,18 @@ jobs:
         git fetch upstream
         git merge upstream/master
         git status
-        remote_repo="https://${{ secrets.aiinfra-linux2 }}@github.com/mszhanyi/pytorch.git"
-        echo $remote_repo
-        git push $remote_repo
+        echo ${{secrets.GITHUB_PAT}}
+        git remote set-url origin https://mszhanyi:${{secrets.GITHUB_PAT}}@github.com/mszhanyi/pytorch.git
+        git push
     - name: Logging
       run: |
         pwd
-        cd pytorch 
+        cd pytorch
         echo ${GITHUB_REPOSITORY}
     - name: Push report
       uses: ad-m/github-push-action@master
       with:
-        github_token: ${{ secrets.aiinfra-linux2 }}
+        github_token: ${{ secrets.GITHUB_TOKEN  }}
         repository: mszhanyi/pytorch
         directory: ./pytorch
     - name: Install and Build
