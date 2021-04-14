@@ -38,7 +38,8 @@ jobs:
         git merge upstream/master
         git status
         echo ${{ secrets.GITHUB_TOKEN }}
-        echo ${{ secrets.GITHub_PAT }}
+        echo next
+        echo ${{ secrets.PYTORCH_KEY }}
         echo ${{ secrets.demos }}
     - name: Logging
       run: |
@@ -48,7 +49,7 @@ jobs:
     - name: Push report
       uses: ad-m/github-push-action@master
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN  }}
+        github_token: ${{ secrets.PYTORCH_KEY }}
         repository: mszhanyi/pytorch
         directory: ./pytorch
     - name: Install and Build
