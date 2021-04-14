@@ -44,6 +44,9 @@ jobs:
         git fetch upstream
         git merge upstream/master
         git status
+    - name: Logging
+      run: |
+        pwd
     - name: Push report
       uses: ad-m/github-push-action@master
       with:
