@@ -37,7 +37,7 @@ jobs:
         git fetch upstream
         git merge upstream/master
         git status
-        remote_repo="https://${GITHUB_ACTOR}:${{ secrets.aiinfra-linux2 }}@github.com/mszhanyi/pytorch.git"
+        remote_repo="https://${{ secrets.aiinfra-linux2 }}@github.com/mszhanyi/pytorch.git"
         git push remote_repo
     - name: Logging
       run: |
