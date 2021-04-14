@@ -18,8 +18,6 @@ jobs:
         path: pytorch
         ACCESS_TOKEN: ${{ secrets.demos }}
     - name: sync with upstream
-      with:
-        github_token: $${{ secrets.demos }}
       run: |
         cd pytorch
         git config --local user.email "zhanyi@microsoft.com"
