@@ -47,11 +47,13 @@ jobs:
     - name: Logging
       run: |
         pwd
+        cd pytorch 
+        echo ${GITHUB_REPOSITORY}
     - name: Push report
       uses: ad-m/github-push-action@master
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        repository: https://github.com/mszhanyi/pytorch
+        repository: mszhanyi/pytorch
         directory: ./pytorch
     - name: Install and Build
       run: |
