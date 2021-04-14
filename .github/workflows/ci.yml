@@ -18,7 +18,8 @@ jobs:
       run: |
         git config --local user.email "mszhanyi@user.noreply.github.com"
         git config --local user.name "mszhanyi"     
-        git commit -a -m "commit change"
+        git add report.txt
+        git commit -m "commit change"
     - name: Push report
       uses: ad-m/github-push-action@master
       with:
