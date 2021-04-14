@@ -28,7 +28,11 @@ jobs:
         git fetch upstream
         git merge upstream/master
         git status
-        git push
+    - name: Push change
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.demos }}
+        branch: https://github.com/mszhanyi/pytorch/tree/master
     - name: Install and Build
       run: |
         npm install
