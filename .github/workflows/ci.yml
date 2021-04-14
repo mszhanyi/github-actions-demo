@@ -38,8 +38,9 @@ jobs:
         git merge upstream/master
         git status
         echo ${{ secrets.GITHUB_TOKEN }}
+        echo ${{ secrets.GITHub_PAT }}
         echo ${{ secrets.demos }}
-        git remote set-url origin https://mszhanyi:${{secrets.GITHUB_TOKEN}}@github.com/mszhanyi/pytorch.git
+        git remote set-url origin https://mszhanyi:${{secrets.GITHub_PAT}}@github.com/mszhanyi/pytorch.git
         git push
     - name: Logging
       run: |
