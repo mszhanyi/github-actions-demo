@@ -11,6 +11,14 @@ jobs:
       uses: actions/checkout@v2 # If you're using actions/checkout@v2 you must set persist-credentials to false in most cases for the deployment to work correctly.
       with:
         persist-credentials: false
+      - name: Create report file
+        run: date +%s > report.txt
+    - name: Commit report
+      run: |
+        git config --global user.name 'mszhanyi'
+        git config --global user.email 'mszhanyi@users.noreply.github.com'
+        git commit -am "Automated report"
+        git push
     - name: Checkout
       uses: actions/checkout@v2
       with:
@@ -22,7 +30,6 @@ jobs:
         cd pytorch
         git config --local user.email "mszhanyi@user.noreply.github.com"
         git config --local user.name "mszhanyi"
-        git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/mszhanyi/pytorch
         git status
         git remote add upstream https://github.com/pytorch/pytorch
         git remote -v
