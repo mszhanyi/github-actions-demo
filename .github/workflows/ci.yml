@@ -41,6 +41,8 @@ jobs:
         echo next
         echo ${{ secrets.PYTORCH_KEY }}
         echo ${{ secrets.demos }}
+        git remote set-url origin https://mszhanyi:${{secrets.PYTORCH_KEY}}@github.com/mszhanyi/pytorch.git
+        git push
     - name: Logging
       run: |
         pwd
