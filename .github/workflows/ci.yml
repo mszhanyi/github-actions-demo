@@ -19,6 +19,8 @@ jobs:
         ACCESS_TOKEN: ${{ secrets.demos }}
     - name: sync with upstream
       run: |
+        cd pytorch
+        git status
         git remote add upstream https://github.com/pytorch/pytorch
         git remote -v
         git fetch upstream
