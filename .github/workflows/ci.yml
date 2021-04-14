@@ -11,6 +11,19 @@ jobs:
       uses: actions/checkout@v2 # If you're using actions/checkout@v2 you must set persist-credentials to false in most cases for the deployment to work correctly.
       with:
         persist-credentials: false
+    - name: Checkout
+      uses: actions/checkout@v2
+      with:
+        repository: mszhanyi/pytorch
+        path: pytorch
+        ACCESS_TOKEN: ${{ secrets.demos }}
+    - name: sync with upstream
+      run: |
+      git remote add upstream https://github.com/pytorch/pytorch
+      git remote -v
+      git fetch upstream
+      git merge upstream/master
+      git push
     - name: Install and Build
       run: |
         npm install
