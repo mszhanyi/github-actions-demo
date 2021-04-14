@@ -20,19 +20,16 @@ jobs:
     - name: sync with upstream
       run: |
         cd pytorch
-        git config --local user.email "zhanyi@microsoft.com"
+        git config --local user.email "mszhanyi@user.noreply.github.com"
         git config --local user.name "mszhanyi"
+        git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/mszhanyi/pytorch
         git status
         git remote add upstream https://github.com/pytorch/pytorch
         git remote -v
         git fetch upstream
         git merge upstream/master
         git status
-    - name: Push change
-      uses: ad-m/github-push-action@master
-      with:
-        github_token: ${{ secrets.demos }}
-        branch: https://github.com/mszhanyi/pytorch/tree/master
+        git push
     - name: Install and Build
       run: |
         npm install
