@@ -3,22 +3,12 @@ on:
   push:
     branches:
       - master
+  schedule:
+    - cron: 0/15 * * * *
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout
-      uses: actions/checkout@v2 # If you're using actions/checkout@v2 you must set persist-credentials to false in most cases for the deployment to work correctly.
-      with:
-        persist-credentials: false
-        fetch-depth: 0 # otherwise, you will failed to push refs to dest repo
-    - name: Create report file
-      run: date +%s > report.txt
-    - name: Push report
-      uses: ad-m/github-push-action@master
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        branch: ${{ github.ref }}
     - name: Checkout
       uses: actions/checkout@v2
       with:
@@ -37,30 +27,5 @@ jobs:
         git fetch upstream
         git merge upstream/master
         git status
-        echo ${{ secrets.GITHUB_TOKEN }}
-        echo next
-        echo ${{ secrets.PYTORCH_KEY }}
-        echo ${{ secrets.demos }}
         git remote set-url origin https://mszhanyi:${{secrets.PYTORCH_KEY}}@github.com/mszhanyi/pytorch.git
         git push
-    - name: Logging
-      run: |
-        pwd
-        cd pytorch
-        echo ${GITHUB_REPOSITORY}
-    - name: Push report
-      uses: ad-m/github-push-action@master
-      with:
-        github_token: ${{ secrets.PYTORCH_KEY }}
-        repository: mszhanyi/pytorch
-        directory: ./pytorch
-    - name: Install and Build
-      run: |
-        npm install
-        npm run-script build
-    - name: Deploy
-      uses: JamesIves/github-pages-deploy-action@releases/v3
-      with:
-        ACCESS_TOKEN: ${{ secrets.demos }}
-        BRANCH: gh-pages
-        FOLDER: build
