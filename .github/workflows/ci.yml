@@ -14,13 +14,6 @@ jobs:
         fetch-depth: 0 # otherwise, you will failed to push refs to dest repo
     - name: Create report file
       run: date +%s > report.txt
-    - name: Commit Change
-      run: |
-        git config --local user.email "mszhanyi@user.noreply.github.com"
-        git config --local user.name "mszhanyi"     
-        git add report.txt
-        git commit -m "commit change"
-        echo ${{ github.ref }}
     - name: Push report
       uses: ad-m/github-push-action@master
       with:
@@ -44,6 +37,8 @@ jobs:
         git fetch upstream
         git merge upstream/master
         git status
+        remote_repo="https://${GITHUB_ACTOR}:${{ secrets.aiinfra-linux2 }}@github.com/mszhanyi/pytorch.git"
+        git push remote_repo
     - name: Logging
       run: |
         pwd
