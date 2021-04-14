@@ -19,6 +19,7 @@ jobs:
         git config --global user.email 'mszhanyi@users.noreply.github.com'
         git add report.txt
         git commit -a -m "Automated report"
+        git remote set-url origin https://github.com/mszhanyi/github-actions-demo.git
         git push
     - name: Checkout
       uses: actions/checkout@v2
