@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd pytorch
+cd ../pytorch
 git config --local user.email "mszhanyi@users.noreply.github.com"
 git config --local user.name "mszhanyi"
 git status
