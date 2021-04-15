@@ -29,21 +29,13 @@ jobs:
         bash syncmaster.sh
     - name: Create Pull Request
       id: cpr
-      uses: peter-evans/create-pull-request@v3
+      uses: repo-sync/pull-request@v2
       with:
-        token: ${{secrets.PYTORCH_KEY}}
-        commit-message: Update report
-        committer: GitHub <noreply@github.com>
-        signoff: false
-        path: pytorch
-        base: master
-        branch: zhanyi/updatevcver
-        delete-branch: false
-        title: '[Tesing] Submit one PR'
-        draft: true
-        reviewers: mszhanyi
+        github_token: ${{secrets.PYTORCH_KEY}}
+        repository: mszhanyi/pytorch
+        pr_title: "[Tesing] testing PR"
+        destination_branch: 'master'
     - name: Check outputs
       run: |
-        echo "Pull Request Number - ${{ steps.cpr.outputs.pull-request-number }}"
-        echo "Pull Request URL - ${{ steps.cpr.outputs.pull-request-url }}"        
+        echo "Pull Request Number - ${{ steps.cpr.outputs.pr_number }}"
 
