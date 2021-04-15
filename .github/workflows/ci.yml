@@ -19,4 +19,4 @@ jobs:
     - name: sync with upstream
       run: |
         pwd
-        syncmaster.sh
+        ./syncmaster.sh
