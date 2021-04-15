@@ -12,6 +12,7 @@ git status
 git remote set-url origin https://mszhanyi:${pytorch_token}@github.com/mszhanyi/pytorch.git
 git push
 
+git branch -D zhanyi/updatevcver
 git checkout -b zhanyi/updatevcver
 date +%s > report.txt
 git add -A
