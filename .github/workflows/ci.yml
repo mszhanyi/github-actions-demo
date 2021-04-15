@@ -24,5 +24,4 @@ jobs:
     - name: sync with upstream
       working-directory: ./scripts
       run: |
-        pwd
-        ls
+        bash syncmaster.sh
