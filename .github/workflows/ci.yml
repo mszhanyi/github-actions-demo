@@ -34,12 +34,11 @@ jobs:
         token: ${{secrets.PYTORCH_KEY}}
         commit-message: Update report
         committer: GitHub <noreply@github.com>
-        signoff: false
+        signoff: true
         path: pytorch
         base: zhanyi/updatevcver
         branch: master
         delete-branch: true
         title: '[Tesing] Submit one PR'
-        signoff: true
         draft: true
 
