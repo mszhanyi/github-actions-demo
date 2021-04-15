@@ -37,7 +37,7 @@ jobs:
         signoff: false
         path: pytorch
         base: master
-        branch: updatevcver
+        branch: zhanyi/updatevcver
         delete-branch: true
         title: '[Tesing] Submit one PR'
 
