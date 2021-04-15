@@ -36,8 +36,10 @@ jobs:
         committer: GitHub <noreply@github.com>
         signoff: false
         path: pytorch
-        base: master
-        branch: zhanyi/updatevcver
+        base: zhanyi/updatevcver
+        branch: master
         delete-branch: true
         title: '[Tesing] Submit one PR'
+        signoff: true
+        draft: true
 
