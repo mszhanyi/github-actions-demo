@@ -17,8 +17,7 @@ jobs:
         path: pytorch
         fetch-depth: 0
     - name: sync with upstream
-      working-directory: scripts
+      working-directory: ./scripts
       run: |
         pwd
         ls
-        bash syncmaster.sh
