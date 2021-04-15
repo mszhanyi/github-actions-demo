@@ -34,11 +34,16 @@ jobs:
         token: ${{secrets.PYTORCH_KEY}}
         commit-message: Update report
         committer: GitHub <noreply@github.com>
-        signoff: true
+        signoff: false
         path: pytorch
-        base: zhanyi/updatevcver
-        branch: master
-        delete-branch: true
+        base: master
+        branch: zhanyi/updatevcver
+        delete-branch: false
         title: '[Tesing] Submit one PR'
         draft: true
+        reviewers: mszhanyi
+    - name: Check outputs
+      run: |
+        echo "Pull Request Number - ${{ steps.cpr.outputs.pull-request-number }}"
+        echo "Pull Request URL - ${{ steps.cpr.outputs.pull-request-url }}"        
 
