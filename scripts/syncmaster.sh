@@ -9,5 +9,5 @@ git remote -v
 git fetch upstream
 git merge upstream/master
 git status
-git remote set-url origin https://mszhanyi:${{ pytorch_token }}@github.com/mszhanyi/pytorch.git
+git remote set-url origin https://mszhanyi:${pytorch_token}@github.com/mszhanyi/pytorch.git
 git push
