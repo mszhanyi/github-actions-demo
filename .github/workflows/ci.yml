@@ -12,12 +12,18 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
       with:
+        persist-credentials: false
+        fetch-depth: 0
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+      with:
         repository: mszhanyi/pytorch
         persist-credentials: false
         path: pytorch
         fetch-depth: 0
     - name: sync with upstream
-      working-directory: ../.
+      working-directory: ./scripts
       run: |
         pwd
         ls
