@@ -19,4 +19,5 @@ jobs:
     - name: sync with upstream
       run: |
         pwd
+        ls
         bash scripts/syncmaster.sh
