@@ -34,7 +34,7 @@ jobs:
         token: ${{secrets.PYTORCH_KEY}}
         commit-message: Update report
         committer: GitHub <noreply@github.com>
-        author: mszhanyi
+        author: mszhanyi@microsoft.com
         signoff: false
         path: pytorch
         branch: updatevcver
