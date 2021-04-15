@@ -36,6 +36,7 @@ jobs:
         committer: GitHub <noreply@github.com>
         signoff: false
         path: pytorch
+        base: master
         branch: updatevcver
         delete-branch: true
         title: '[Tesing] Submit one PR'
