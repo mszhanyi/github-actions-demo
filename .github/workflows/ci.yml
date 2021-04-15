@@ -18,4 +18,5 @@ jobs:
         fetch-depth: 0
     - name: sync with upstream
       run: |
-        ./syncmaster.sh
+        pwd
+        syncmaster.sh
