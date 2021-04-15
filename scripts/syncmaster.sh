@@ -13,6 +13,7 @@ git remote set-url origin https://mszhanyi:${pytorch_token}@github.com/mszhanyi/
 git push
 
 git checkout -b zhanyi/updatevcver
+git branch --set-upstream-to=origin/zhanyi/updatevcver zhanyi/updatevcver
 git pull
 date +%s > report.txt
 git add -A
