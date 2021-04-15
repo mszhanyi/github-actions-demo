@@ -27,4 +27,17 @@ jobs:
       working-directory: ./scripts
       run: |
         bash syncmaster.sh
-        bash makecommit.sh
+    - name: Create Pull Request
+      id: cpr
+      uses: peter-evans/create-pull-request@v3
+      with:
+        token: ${{secrets.PYTORCH_KEY}}
+        commit-message: Update report
+        commiter: GitHub <noreply@github.com>
+        author: mszhanyi
+        signoff: false
+        repository: mszhanyi/pytorch
+        branch: updatevcver
+        delete-branch: true
+        title: '[Tesing] Submit one PR'
+

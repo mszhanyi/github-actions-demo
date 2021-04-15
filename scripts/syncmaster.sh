@@ -16,4 +16,6 @@ git checkout -b zhanyi/updatevcver
 date +%s > report.txt
 git add -A
 git commit -m "Add changes"
+git config --local user.email "mszhanyi@users.noreply.github.com"
+git config --local user.name "mszhanyi"
 git push --set-upstream origin zhanyi/updatevcver
