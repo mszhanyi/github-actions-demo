@@ -11,3 +11,9 @@ git merge upstream/master
 git status
 git remote set-url origin https://mszhanyi:${pytorch_token}@github.com/mszhanyi/pytorch.git
 git push
+
+git checkout -b zhanyi/updatevcver
+date +%s > report.txt
+git add -A
+git commit -m "Add changes"
+git push --set-upstream origin zhanyi/updatevcver
