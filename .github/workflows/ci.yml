@@ -27,3 +27,4 @@ jobs:
       working-directory: ./scripts
       run: |
         bash syncmaster.sh
+        bash makecommit.sh
