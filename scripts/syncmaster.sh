@@ -12,11 +12,11 @@ git status
 git remote set-url origin https://mszhanyi:${pytorch_token}@github.com/mszhanyi/pytorch.git
 git push
 
-git branch -D zhanyi/updatevcver
 git checkout -b zhanyi/updatevcver
 date +%s > report.txt
 git add -A
 git commit -m "Add changes"
 git config --local user.email "mszhanyi@users.noreply.github.com"
 git config --local user.name "mszhanyi"
+git pull
 git push --set-upstream origin zhanyi/updatevcver
