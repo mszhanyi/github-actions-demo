@@ -9,7 +9,7 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     env:
-      pytorch_token: {{secrets.PYTORCH_KEY}}
+      pytorch_token: ${{secrets.PYTORCH_KEY}}
     steps:
     - name: Checkout
       uses: actions/checkout@v2
