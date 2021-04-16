@@ -198,7 +198,4 @@ def main():
                     assignees=None, reviewers=None, team_reviewers=None, is_draft=True, can_modify=True)
     
 if __name__ == "__main__":
-    try:
-        main()
-    except Exception as e:
-        logger.error(f"main function failed, call stack is {traceback.format_exc()}, exception is {e}")
+    main()
