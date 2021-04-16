@@ -1,5 +1,5 @@
 #!/bin/bash
-set -ex
+# set -ex
 
 cd ../pytorch
 git config --local user.email "mszhanyi@users.noreply.github.com"
@@ -16,8 +16,8 @@ git push
 git checkout -b zhanyi/updatevcver
 git branch --set-upstream-to=origin/zhanyi/updatevcver zhanyi/updatevcver
 git pull
-git pull origin master
 python -m pip install lxml
+
 python ../scripts/updatevcver.py
 git commit -a -m "Update Lastest VS"
 git status
