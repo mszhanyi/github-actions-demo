@@ -192,8 +192,13 @@ def open_pull_request(title, body, target, source, is_draft=False, can_modify=Tr
 
     return response
 
-#open_pull_request("[Don't review]Update VS by Robot", "", "master", "mszhanyi:zhanyi/updatevcver", is_draft=True)
-if __name__ == "__main__"
+def main():
     os.environ['PULL_REQUEST_UPDATE'] = 1
     create_pull_request(source="mszhanyi:zhanyi/updatevcver", target="master", body="", title="[Don't review] Update VS by Robot", 
                     assignees=None, reviewers=None, team_reviewers=None, is_draft=True, can_modify=True)
+    
+if __name__ == "__main__"
+    try:
+        main()
+    except Exception as e:
+        logger.error(f"main function failed, call stack is {traceback.format_exc()}, exception is {e}")
