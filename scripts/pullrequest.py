@@ -193,7 +193,7 @@ def open_pull_request(title, body, target, source, is_draft=False, can_modify=Tr
     return response
 
 def main():
-    os.environ['PULL_REQUEST_UPDATE'] = 1
+    os.environ['PULL_REQUEST_UPDATE'] = "1"
     create_pull_request(source="mszhanyi:zhanyi/updatevcver", target="master", body="", title="[Don't review] Update VS by Robot", 
                     assignees=None, reviewers=None, team_reviewers=None, is_draft=True, can_modify=True)
     
