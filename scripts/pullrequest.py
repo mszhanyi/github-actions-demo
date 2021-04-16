@@ -197,7 +197,7 @@ def main():
     create_pull_request(source="mszhanyi:zhanyi/updatevcver", target="master", body="", title="[Don't review] Update VS by Robot", 
                     assignees=None, reviewers=None, team_reviewers=None, is_draft=True, can_modify=True)
     
-if __name__ == "__main__"
+if __name__ == "__main__":
     try:
         main()
     except Exception as e:
