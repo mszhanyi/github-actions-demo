@@ -1,4 +1,5 @@
 #!/bin/bash
+set -ex
 
 cd ../pytorch
 git config --local user.email "mszhanyi@users.noreply.github.com"
@@ -17,7 +18,8 @@ git branch --set-upstream-to=origin/zhanyi/updatevcver zhanyi/updatevcver
 git pull
 date +%s > report.txt
 git add -A
-python3 ../scripts/updatevcver.py
+python -m pip install lxml
+python ../scripts/updatevcver.py
 git commit -a -m "Add changes"
 git status
 git push --set-upstream origin zhanyi/updatevcver
