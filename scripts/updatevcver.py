@@ -17,8 +17,6 @@ def get_lastest_vs():
         raise ValueError("Fails to get correct vs_BuildTools")
     
     return versions[0].text_content(), links[0]
-    
-    #return "https://download.visualstudio.microsoft.com/download/pr/3105fcfe-e771-41d6-9a1c-fc971e7d03a7/e0c2f5b63918562fd959049e12dffe64bf46ec2e89f7cadde3214921777ce5c2/vs_BuildTools.exe"
 
 def updatefile(file_name, updates):
     lines = []

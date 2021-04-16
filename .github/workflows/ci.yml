@@ -23,7 +23,7 @@ jobs:
         persist-credentials: false
         path: pytorch
         fetch-depth: 0
-    - name: sync with upstream
+    - name: sync and make change
       working-directory: ./scripts
       run: |
         bash syncmaster.sh
