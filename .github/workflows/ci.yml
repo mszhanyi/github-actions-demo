@@ -27,15 +27,5 @@ jobs:
       working-directory: ./scripts
       run: |
         bash syncmaster.sh
-    - name: Create Pull Request
-      id: cpr
-      uses: repo-sync/pull-request@v2
-      with:
-        github_token: ${{secrets.PYTORCH_KEY}}
-        repository: mszhanyi/pytorch
-        pr_title: "[Tesing] testing PR"
-        destination_branch: 'master'
-    - name: Check outputs
-      run: |
-        echo "Pull Request Number - ${{ steps.cpr.outputs.pr_number }}"
+
 
