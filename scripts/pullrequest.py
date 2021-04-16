@@ -9,10 +9,12 @@ API_VERSION = "v3"
 BASE = "https://api.github.com"
 
 HEADERS = {
-    "Authorization": "token %s" % ${pytorch_token},
+    "Authorization": "token %s" % os.environ.get("pytorch_token"),
     "Accept": "application/vnd.github.%s+json;application/vnd.github.antiope-preview+json;application/vnd.github.shadow-cat-preview+json"
     % API_VERSION,
 }
+
+print(HEADERS)
 
 # URLs
 # REPO_URL = "%s/repos/%s" % (BASE, "pytorch/pytorch")
