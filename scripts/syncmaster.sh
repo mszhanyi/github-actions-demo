@@ -18,7 +18,7 @@ git branch --set-upstream-to=origin/zhanyi/updatevcver zhanyi/updatevcver
 git pull
 python -m pip install lxml
 python ../scripts/updatevcver.py
-git commit -a -m "try lastest VS"
+git commit -a -m "Add changes"
 git status
 git push --set-upstream origin zhanyi/updatevcver
-python pullrequest.py
+python ../scripts/pullrequest.py
