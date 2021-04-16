@@ -21,5 +21,5 @@ python -m pip install lxml
 python ../scripts/updatevcver.py
 git commit -a -m "Update Lastest VS"
 git status
-git push --set-upstream origin zhanyi/updatevcver
+git push
 
