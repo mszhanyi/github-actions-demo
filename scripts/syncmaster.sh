@@ -22,4 +22,4 @@ python ../scripts/updatevcver.py
 git commit -a -m "Update Lastest VS"
 git status
 git push --set-upstream origin zhanyi/updatevcver
-python ../scripts/pullrequest.py
+

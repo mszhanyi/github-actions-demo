@@ -27,5 +27,9 @@ jobs:
       working-directory: ./scripts
       run: |
         bash syncmaster.sh
+    - name: create Pull Request
+      working-directory: ./scripts
+      run: |
+        python pullrequest.py
 
 
