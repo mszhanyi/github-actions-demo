@@ -17,7 +17,7 @@ git branch --set-upstream-to=origin/zhanyi/updatevcver zhanyi/updatevcver
 git pull
 date +%s > report.txt
 git add -A
-python3 updatevcver.py
+python3 ../scripts/updatevcver.py
 git commit -a -m "Add changes"
 git status
 git push --set-upstream origin zhanyi/updatevcver
