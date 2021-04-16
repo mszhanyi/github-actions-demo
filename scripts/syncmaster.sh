@@ -19,7 +19,7 @@ git pull
 git pull origin master
 python -m pip install lxml
 python ../scripts/updatevcver.py
-git commit -a -m "Add changes"
+git commit -a -m "Update Lastest VS"
 git status
 git push --set-upstream origin zhanyi/updatevcver
 python ../scripts/pullrequest.py
