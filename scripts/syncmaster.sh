@@ -1,5 +1,5 @@
 #!/bin/bash
-set -ex
+# set -ex
 
 cd ../pytorch
 git config --local user.email "mszhanyi@users.noreply.github.com"
