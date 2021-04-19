@@ -35,8 +35,5 @@ jobs:
         PULL_REQUEST_FROM_BRANCH: "zhanyi/updatevcver"
         PULL_REQUEST_BRANCH: "master"
         PULL_REQUEST_TITLE: "[Testing] Use Actions"
-        MAINTAINER_CANT_MODIFY: "1"
-        PASS_IF_EXISTS: "1"
-        PULL_REQUEST_UPDATE: "1"
 
 
