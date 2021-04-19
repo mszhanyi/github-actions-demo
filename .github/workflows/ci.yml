@@ -31,7 +31,7 @@ jobs:
       #working-directory: ./scripts
       #run: |
       #  python pullrequest.py
-      uses: vsoch/pull-request-action@master
+      uses: mszhanyi/pull-request-action@master
       env:
         GITHUB_TOKEN: "${{secrets.PYTORCH_KEY}}"
         GITHUB_REPOSITORY: "mszhanyi/pytorch"
