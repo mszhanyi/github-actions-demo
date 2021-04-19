@@ -33,8 +33,8 @@ jobs:
       #  python pullrequest.py
       uses: mszhanyi/pull-request-action@master
       env:
-        GITHUB_TOKEN: "${{secrets.PYTORCH_KEY}}"
-        GITHUB_REPOSITORY: "mszhanyi/pytorch"
+        PULL_REQUEST_TOKEN: ${{secrets.PYTORCH_KEY}}
+        PULL_REQUEST_REPOSITORY: "mszhanyi/pytorch"
         PULL_REQUEST_FROM_BRANCH: "mszhanyi:zhanyi/updatevcver"
         PULL_REQUEST_BRANCH: "master"
         PULL_REQUEST_TITLE: "[Testing] Use Actions"
