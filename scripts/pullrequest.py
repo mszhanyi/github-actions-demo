@@ -30,8 +30,8 @@ HEADERS = {
 print(HEADERS)
 
 # URLs
-REPO_URL = "%s/repos/%s" % (BASE, "pytorch/pytorch")
-# REPO_URL = "%s/repos/%s" % (BASE, "mszhanyi/pytorch")
+# REPO_URL = "%s/repos/%s" % (BASE, "pytorch/pytorch")
+REPO_URL = "%s/repos/%s" % (BASE, "mszhanyi/pytorch")
 ISSUE_URL = "%s/issues" % REPO_URL
 PULLS_URL = "%s/pulls" % REPO_URL
 

@@ -28,12 +28,14 @@ jobs:
       run: |
         bash syncmaster.sh
     - name: create Pull Request
-      uses: vsoch/pull-request-action@master
-      env:
-        GITHUB_TOKEN: ${{secrets.PYTORCH_KEY}}
-        GITHUB_REPOSITORY: "mszhanyi/pytorch"
-        PULL_REQUEST_FROM_BRANCH: "mszhanyi:zhanyi/updatevcver"
-        PULL_REQUEST_BRANCH: "master"
-        PULL_REQUEST_TITLE: "[Testing] Use Actions"
+      run: |
+        python pullrequest.py
+      #uses: mszhanyi/pull-request-action@master
+      #env:
+      #  GITHUB_TOKEN: ${{secrets.PYTORCH_KEY}}
+      #  GITHUB_REPOSITORY: "mszhanyi/pytorch"
+      #  PULL_REQUEST_FROM_BRANCH: "mszhanyi:zhanyi/updatevcver"
+      #  PULL_REQUEST_BRANCH: "master"
+      #  PULL_REQUEST_TITLE: "[Testing] Use Actions"
 
 
